@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StegoCipher — Secret Message Hider</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+  <canvas id="canvas"></canvas>
+  <input type="file" id="file-input" accept="image/*" style="display:none" />
+
+  <!-- Header -->
+  <h2>🔐 StegoCipher</h2>
+  <p class="subtitle">Hide secret messages invisibly inside any image</p>
+
+  <div class="badges">
+    <span class="badge badge-green">📴 Offline</span>
+    <span class="badge badge-gray">🔒 Private</span>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" id="tab-encode" onclick="switchTab('encode')">🔒 Hide Message</button>
+    <button class="tab"        id="tab-decode" onclick="switchTab('decode')">🔓 Reveal Message</button>
+  </div>
+
+  <!-- Step 1 — Image -->
+  <div class="step-block">
+    <label class="step-label">Step 1 — Upload an image</label>
+    <button class="upload-btn" onclick="document.getElementById('file-input').click()">📁 Choose Image</button>
+    <span class="file-name" id="file-name"></span>
+  </div>
+
+  <img id="preview-img" alt="Uploaded image" />
+
+  <!-- Step 2 — Password -->
+  <div class="step-block">
+    <label class="step-label" id="pass-label">Step 2 — Set a password</label>
+    <div class="pass-wrap">
+      <input type="password" id="password" placeholder="Enter your password"
+        oninput="onPasswordChange()" />
+      <button class="show-btn" onclick="togglePassword()">Show</button>
+    </div>
+    <div class="strength-row">
+      <span id="strength-label" style="font-weight:bold"></span>
+    </div>
+  </div>
+
+  <!-- Step 3 — Message (encode only) -->
+  <div class="step-block" id="message-block">
+    <label class="step-label">Step 3 — Type your secret message</label>
+    <textarea id="message" rows="4" placeholder="Type your secret message here..."
+      oninput="onMessageChange()"></textarea>
+    <div class="char-count" id="char-count"></div>
+  </div>
+
+  <!-- Action button -->
+  <button class="action-btn" id="action-btn" onclick="handleAction()">
+    🔒 Hide Message in Image
+  </button>
+
+  <!-- Output areas -->
+  <div id="encode-result" style="display:none"></div>
+  <div id="decode-result" style="display:none"></div>
+  <div id="error-box"     style="display:none" class="error-box"></div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p class="footer-tip">💡 Always share as PNG — other formats may destroy the hidden data</p>
+    <p class="signature">— Abhiram Danimireddy —</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

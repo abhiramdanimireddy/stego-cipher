@@ -1,0 +1,243 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  min-height: 100vh;
+  padding: 32px 16px;
+}
+
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.badges {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.badge-blue  { background: #eff6ff; color: #1e40af; }
+.badge-green { background: #f0fdf4; color: #166534; }
+.badge-gray  { background: #f3f4f6; color: #374151; }
+
+.tabs {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.tab {
+  flex: 1;
+  padding: 11px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  background: #f0f0f0;
+  color: #333;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: #2563eb;
+  color: white;
+}
+
+.step-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.step-block { margin-bottom: 18px; }
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+textarea { resize: vertical; }
+
+.pass-wrap { position: relative; }
+.pass-wrap input { padding-right: 60px; }
+
+.show-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #888;
+}
+
+.strength-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.char-count {
+  font-size: 11px;
+  color: #aaa;
+  text-align: right;
+  margin-top: 4px;
+}
+
+.upload-btn {
+  padding: 9px 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.file-name {
+  margin-left: 10px;
+  font-size: 13px;
+  color: #555;
+}
+
+#preview-img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 18px;
+  display: none;
+}
+
+.action-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  transition: background 0.2s;
+}
+
+.action-btn:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+.result-box.success    { background: #f0fdf4; border: 1px solid #86efac; }
+.result-box.warning    { background: #fffbeb; border: 1px solid #fcd34d; }
+.result-box.decode-ok  { background: #eff6ff; border: 1px solid #93c5fd; }
+
+.result-title          { font-weight: bold; margin-bottom: 10px; }
+.result-title.green    { color: #166534; }
+.result-title.blue     { color: #1e40af; }
+.result-title.amber    { color: #92400e; }
+
+.message-box {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.7;
+}
+
+.warn-detail {
+  font-size: 12px;
+  color: #92400e;
+  background: #fef3c7;
+  padding: 8px 10px;
+  border-radius: 4px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.download-link {
+  display: inline-block;
+  padding: 9px 22px;
+  background: #16a34a;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.decode-meta {
+  font-size: 11px;
+  color: #888;
+  margin-top: 8px;
+}
+
+.error-box {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 5px;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+.footer {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.footer-tip  { font-size: 11px; color: #bbb; margin-bottom: 8px; }
+.signature   { font-size: 12px; color: #9ca3af; letter-spacing: 1px; }
+
+canvas { display: none; }
