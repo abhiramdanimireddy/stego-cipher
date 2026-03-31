@@ -12,11 +12,11 @@ Only someone with the correct password and this tool can reveal the message. Sha
 
 ---
 
-## Why no other tool can decrypt it
+## Why  other tool cannot decrypt it
 
-Any image encoded with StegoCipher can only be decoded by StegoCipher. No other steganography tool, decoder, or forensic software can recover the message — even if they know a message exists, even if they extract every byte from the image.
+Any image encoded with StegoCipher can only be decoded by StegoCipher. other online tools cannot decode it 
 
-The message is processed through a custom encryption method unique to this tool before being hidden. What gets stored in the image is not text, not standard cipher output, and not anything another tool is built to handle. Even if someone extracts the raw hidden bytes, they see nothing but random unreadable symbols. The password, the encryption method, and this tool must all be present at the same time — and no other tool in existence satisfies all three.
+The message is processed through a custom encryption method unique to this tool before being hidden. What gets stored in the image is not text . Even if someone extracts the raw hidden bytes, they see nothing but random unreadable symbols. The password, the encryption method, and this tool must all be present at the same time 
 
 ---
 
@@ -38,14 +38,100 @@ The message is converted to numbers and those numbers are scattered inside a 3D 
 
 ## How to use
 
-1. Open `index.html` in any browser
-2. Upload a PNG image
-3. Set a password — mix letters, numbers, and symbols
+**To hide a message:**
+1. Go to the Hide Message tab.
+2. upload a PNG file
+3. Set a password — mix letters, numbers, and symbols e.g. `1'Jk#w`
 4. Type your secret message
-5. Click **Hide Message** and download the image
-6. To reveal — upload the image, enter the same password, click **Reveal**
+5. Click Hide Message in Image
+6. Click Download Image — save the PNG and share it
+ 
+**To reveal a message:**
+1. Go to the Reveal Message tab
+2. Upload the encoded PNG file
+3. Enter the same password used when hiding
+4. Click Reveal Hidden Message
+5. Your original message appears on screen
 
-Works completely offline. No data ever leaves your device.
+## Installation
+
+### 1) Single HTML File (easiest offline option)
+ 
+
+**Download the file StegoCipher.html**
+
+ Opens in your browser 
+ 
+> This file works completely offline. No internet required after downloading.
+
+### 2) online
+ Visit: **[abhiramdanimireddy.github.io/stego-cipher](https://abhiramdanimireddy.github.io/stego-cipher)**
+
+### 3)  Download HTML + CSS + JS files
+1) Download the project ZIP file from GitHub
+2) Extract the ZIP file
+3) Place all extracted files in a single folder
+4) Open index.html in your browser
+
+Ensure these files are together
+
+index.html
+
+style.css
+
+script.js  
+
+### 4) Python (cd)
+ 
+For running the tool directly from terminal using Python.
+ 
+**1 — Install Python**
+ 
+Download and install Python (3.8 or higher)
+ 
+**2 — Get the project**
+ 
+A — using Git:
+```
+git clone https://github.com/abhiramdanimireddy/stego-cipher
+cd stego-cipher
+```
+ 
+B — download ZIP:
+```
+Download ZIP from GitHub → extract → open terminal inside the folder
+```
+ 
+**3 — Install Dependencies**
+
+```
+pip install -r requirements.txt
+```
+ 
+**4 — Hide a message**
+```
+python hide.py
+```
+
+Follow the prompts:
+```
+Image path: meme.png
+Password: 1'Jk#w
+Secret message: your message here
+```
+Output saved as `secret_image.png`
+ 
+**5 — Reveal a message**
+```
+python reveal.py
+```
+Follow the prompts:
+```
+Image path: secret_image.png
+Password: 1'Jk#w
+```
+Your hidden message appears in the terminal.
+
 
 ---
 
@@ -57,6 +143,6 @@ Works completely offline. No data ever leaves your device.
 
 ---
 
-## Author
+
 
 **Abhiram Danimireddy**
